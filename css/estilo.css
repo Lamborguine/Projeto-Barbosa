@@ -1,0 +1,275 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #f8f8f8;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+/* Div que contém os 2 quadradões que contém o header e a área de input/output*/
+
+.container-caixas-texto {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+    width: 100%;
+    align-items: center;
+}
+
+/* Quadrados maiores, onde ficam localizados tanto o header quanto o espaço pra escrever/receber texto. é o quadrado mais externo */
+
+.quadrado-texto {
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 3px #3d3d3d;
+    height: 95%;
+    width: 45%;
+}
+
+/* Estilo padrão do "header" do input e output */
+
+.header-input-output {
+    width: 100%;
+    height: 10%;
+    border-bottom: 3px solid #3d3d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+/* Parte maior do quadrado, a que fica abaixo do header. Área onde será escrito ou recebido texto */
+
+.espaco-input-output {
+    width: 100%;
+    height: 90%;
+}
+
+/* Estilos do textarea onde vc escreve o input */
+
+.texto {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    font-size: 26px;
+    overflow-y: auto;
+    font-family: Verdana, Arial, sans-serif;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Formatação de um placeholder dinâmico para o output*/
+
+.placeholder-dinamico {
+    font-size: 26px;
+    opacity: 0.5;
+}
+
+
+/* Container onde estão contidos os botões. Vão ter que mexer aqui pra alinhar eles direito (se quiserem, obvio) */
+
+.container-botoes {
+    text-align: center;
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    margin-right: 2%;
+    margin-left: 2%;
+    justify-content: space-between;
+    height: 10%;
+}
+
+/* Estilo padrão dos botões de upload, download e formatar*/
+
+.botoes {
+    background-color: white;
+    border: 2px solid #48484a;
+    color: #212121;
+    padding: 15px 32px;
+    font-size: 100%;
+    margin-top: 15px;
+    margin-left: auto; 
+    margin-right: auto;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 15em;
+    height: 4em;
+}
+
+/* Estilo único do botão de formatar texto */
+
+.estilo-do-formatar {
+    background-color: #285721;
+    border: none;
+    color: white;
+}
+
+/* Tamanho padrão do ícone da setinha pro download e upload */
+
+.icones-botoes {
+    width: 13%;
+    height: 65%;
+    vertical-align: middle;
+    margin-bottom: 2%;
+}
+
+/* Feito só pra girar a foto de download em 180 graus pra colocar no botão de upload*/
+
+.girar-180-graus {
+    transform: rotate(180deg);
+}
+
+/*===================================== HOVERS ============================*/
+
+.botoes:hover {
+    background-color: lightgray;
+}
+
+.estilo-do-formatar:hover {
+    background-color: #1b3c17;
+}
+
+/*====================================== CORES =============================*/
+.cor-header-input {
+    background: white;
+}
+
+.cor-caixa-input {
+    background: #e5e5e5;
+}
+
+.cor-header-output {
+    background: white;
+}
+
+.cor-caixa-output {
+    background: #e5e5e5;
+}
+
+/* MODAIS */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.fechar-modal {
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    color: #ff0000;
+}
+
+form {
+    text-align: center;
+}
+
+.modal button{
+    background-color: #48484a;
+    border: 2px solid #48484a;
+    color: #ffffff;
+    padding: 15px 32px;
+    font-size: 100%;
+    margin-top: 15px;
+    margin-left: auto; 
+    margin-right: auto;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 15em;
+    height: 4em;
+}
+
+#arquivo {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 90%;
+    margin-bottom: 15px;
+    margin-top: 7px;
+}
+
+select option {
+    background-color: #fff;
+    color: #000;
+}
+
+/* MODAIS */
+
+
+@media only screen and (max-width: 790px) {
+    .container-caixas-texto {
+        flex-direction: column; /* Altera a direção do flex para coluna em telas pequenas */
+        width: 100%;
+    }
+
+    .quadrado-texto.cor-caixa-input{
+        width: 80%;
+        margin-top: 20px;
+    }
+    .quadrado-texto.cor-caixa-output{
+        width: 80%;
+        margin-top: 20px;
+    }
+    .container-botoes{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container-botoes button {
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 70%;
+        overflow: hidden;
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+    }
+    .container-botoes img {
+        width: 10%; 
+        height: auto; 
+    }
+    
+}

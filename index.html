@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="scripts.js" defer></script>
+        <title>Projeto Barbosa</title>
+    </head>
+    <body>
+        <div class="container-caixas-texto"> <!-- Container onde estão as caixas de texto -->
+            
+            <div class="quadrado-texto cor-caixa-input"> <!-- Caixa de texto de entrada -->
+                
+                <div class="header-input-output cor-header-input"> <!-- Header da caixa de texto de entrada -->
+                   
+                    Digite seu Texto:
+    
+                </div> <!-- Fechamento do header da caixa de texto de entrada -->
+                
+                <div class="espaco-input-output"> <!-- Div do espaço para escrever o texto -->
+                    
+                    <textarea id ="entrada" class="texto" type="text" placeholder="Digite seu texto"></textarea> <!-- Textarea para escrever o input -->
+
+                </div> <!-- Fechamento do espaço para escrever o texto -->
+                
+
+            </div> <!-- Fechamento da caixa de texto de entrada -->
+
+            <div class="quadrado-texto cor-caixa-output"> 
+                
+                <div class="header-input-output cor-header-output"> <!-- Header da caixa de texto de saída -->
+                
+                    Correção Sugerida:
+                
+                </div> <!-- Fechamento do header da caixa de texto de saída -->
+
+                <div id = "resultado" class="espaco-input-output placeholder-dinamico"> <!-- Div do espaço para receber o texto formatado -->
+                    
+                    Aqui está o seu texto
+                    
+
+                </div>
+            
+            </div> <!-- Fechamento da caixa de texto de saída -->
+                          
+        </div> <!-- Fechamento do container onde estão as caixas de texto -->
+
+        <div class="container-botoes">
+
+            <button id="btnAbrirModalUpload" class="botoes"><img class="icones-botoes girar-180-graus" src="images/baixar.png">Upload de arquivo</button>
+
+            <button id="btnFormatarTexto" class="botoes estilo-do-formatar">Formatar Texto</button>
+
+            <button id="btnAbrirModalDownload" class="botoes">Baixar arquivo<img class="icones-botoes" src="images/baixar.png"></button>
+
+            <div id="modal-upload" class="modal">
+                <div class="modal-conteudo">
+                    <span class="fechar-modal" onclick="fecharModal('modal-upload')">&times;</span>
+                    <p>Faça o Upload de um arquivo de texto</p>
+
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <input type="file" id="arquivo" name="arquivo" accept=".txt">
+                        <br><br>
+                    </form>
+                    <button type="submit" class="estilo-do-formatar" onclick="exibirModalConfirmacao('upload')">Enviar</button>
+                </div>
+            </div>
+
+            <div id="modal-download" class="modal">
+                <div class="modal-conteudo">
+                    <span class="fechar-modal" onclick="fecharModal('modal-download')">&times;</span>
+                    <p>Você quer mesmo fazer o download do arquivo?</p>
+                    <label for="extensao">Selecione a extensão: </label>
+                    <select id="extensao" name="extensao">
+                        <option value="txt">.txt</option>
+                        <option value="pdf">.pdf</option>
+                        <option value="word">.word</option>
+                        <option value="docx">.docx</option>
+                    </select>
+                    <!--<form id="downloadForm" action="/download" method="post" enctype="multipart/form-data" target="_blank">
+                    <button type="submit" class="estilo-do-formatar">Baixar</button>
+                    </form>-->
+                    <button type="button" onclick="exibirModalConfirmacao('download')">Baixar</button>
+
+                </div>
+            </div>
+
+            <div id="modal-download-confirmacao" class="modal">
+                <div class="modal-conteudo">
+                    <p>O arquivo foi baixado com sucesso!</p>
+                </div>
+            </div>
+
+            <div id="modal-upload-confirmacao" class="modal">
+                <div class="modal-conteudo">
+                    <p>Você postou seu arquivo no sistema!</p>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
