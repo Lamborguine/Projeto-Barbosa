@@ -7,7 +7,7 @@ const Buttons = () => {
             <div className="justify-self-end">
                 <button
                     className="flex border-2 border-black hover:bg-gray-200 font-bold py-4 px-4 rounded-lg">
-                    <img src={"/baixar.png"} alt="Baixar" className="h-6 w-6 inline-block mr-3" />
+                    <img src={"/baixar.png"} alt="Baixar" className="h-6 w-6 inline-block mr-3 transform rotate-180" />
                     <p>Upload de Arquivo</p>
                 </button>
             </div>
