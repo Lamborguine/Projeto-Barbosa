@@ -3,8 +3,8 @@ import React from 'react';
 const Buttons = () => {
 
     return (
-        <div className="my-10 w-full grid grid-cols-3 items-center justify-items-center gap-44">
-            <div className="justify-self-end">
+        <div className="my-10 w-full grid lg:grid-cols-3 grid-cols-1 items-center justify-items-center gap-4">
+            <div className="justify-self-center">
                 <button
                     className="flex border-2 border-black hover:bg-gray-200 font-bold py-4 px-4 rounded-lg">
                     <img src={"/baixar.png"} alt="Baixar" className="h-6 w-6 inline-block mr-3 transform rotate-180" />
@@ -17,7 +17,7 @@ const Buttons = () => {
                     Formatar Texto
                 </button>
             </div>
-            <div className="justify-self-start">
+            <div className="justify-self-center">
                 <button
                     className="flex border-2 border-black hover:bg-gray-200 font-bold py-4 px-4 rounded-lg">
                     <img src={"/baixar.png"} alt="Baixar" className="h-6 w-6 inline-block mr-3" />
