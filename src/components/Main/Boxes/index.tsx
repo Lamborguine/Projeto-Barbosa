@@ -19,7 +19,7 @@ const InputBox = () => {
 
 const OutPutBox = () => {
     return (
-        <button>Click me</button>
+        <div></div>
     );
 };
 

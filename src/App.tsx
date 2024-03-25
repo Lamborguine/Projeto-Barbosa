@@ -9,8 +9,10 @@ function App() {
     return (
         <div className="">
             <Header />
-            <Main />
-            <Footer />
+            <div className="mx-10">
+                <Main />
+                <Footer />
+            </div>
         </div>
     );
 }
