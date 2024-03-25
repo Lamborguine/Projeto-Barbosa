@@ -1,8 +1,13 @@
 import React from 'react';
 
-const Buttons = () => {
+interface ButtonsProps {
+    handleButtonPress: (button: boolean) => void;
+    buttonPress: boolean;
+};
 
-    const textoCorrigido = () => {
+const Buttons: React.FC<ButtonsProps> = ({ handleButtonPress, buttonPress }) => {
+
+    const textoCorrigido = () => { //TODO: mudar
         return "testando algum texto corrigido";
     };
 
@@ -30,6 +35,7 @@ const Buttons = () => {
             </div>
             <div>
                 <button
+                    onClick={() => handleButtonPress(true)}
                     className="bg-green-700 hover:bg-green-800 text-white font-bold py-4 px-7 rounded-lg" >
                     Corrigir Texto
                 </button>
@@ -38,7 +44,7 @@ const Buttons = () => {
                 <button
                     className="flex border-2 border-black hover:bg-gray-200 font-bold py-4 px-4 rounded-lg">
                     <img src={"/baixar.png"} alt="Baixar" className="h-6 w-6 inline-block mr-3" />
-                    <p>Download do Texto Corrigido</p>
+                    <p>Download do Texto Corrigido</p> {/*TODO: mudar*/}
                 </button>
             </div>
         </div>
