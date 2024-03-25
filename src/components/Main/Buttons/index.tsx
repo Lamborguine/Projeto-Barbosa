@@ -2,6 +2,23 @@ import React from 'react';
 
 const Buttons = () => {
 
+    const textoCorrigido = () => {
+        return "testando algum texto corrigido";
+    };
+
+    const baixarArquivoTexto = () => {
+        const conteudo = textoCorrigido();
+        const blob = new Blob([conteudo], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'texto_corrigido.txt';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+    };
+
     return (
         <div className="my-10 w-full grid lg:grid-cols-3 grid-cols-1 items-center justify-items-center gap-4">
             <div className="justify-self-center">
